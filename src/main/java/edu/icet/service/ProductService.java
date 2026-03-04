@@ -1,5 +1,6 @@
 package edu.icet.service;
 
+import edu.icet.model.dto.ProductDTO;
 import edu.icet.model.entity.Product;
 import edu.icet.repository.ProductRepository;
 import lombok.RequiredArgsConstructor;
@@ -13,6 +14,18 @@ public class ProductService {
 
     private final ProductRepository productRepository;
 
+    public void createProduct(ProductDTO productDTO) {
+
+        Product product = Product.builder()
+                .name(productDTO.getName())
+                .description(productDTO.getDescription())
+                .price(productDTO.getPrice())
+                .build();
+
+        productRepository.save(product);
+        log.info("Product {} is saved",product.getId());
+
+    }
 
 
 }
