@@ -1,6 +1,6 @@
 package edu.icet.service;
 
-import edu.icet.model.dto.ProductDTO;
+import edu.icet.model.dto.ProductRequest;
 import edu.icet.model.entity.Product;
 import edu.icet.repository.ProductRepository;
 import lombok.RequiredArgsConstructor;
@@ -14,12 +14,12 @@ public class ProductService {
 
     private final ProductRepository productRepository;
 
-    public void createProduct(ProductDTO productDTO) {
+    public void createProduct(ProductRequest productRequest) {
 
         Product product = Product.builder()
-                .name(productDTO.getName())
-                .description(productDTO.getDescription())
-                .price(productDTO.getPrice())
+                .name(productRequest.getName())
+                .description(productRequest.getDescription())
+                .price(productRequest.getPrice())
                 .build();
 
         productRepository.save(product);

@@ -1,6 +1,6 @@
 package edu.icet.controller;
 
-import edu.icet.model.dto.ProductDTO;
+import edu.icet.model.dto.ProductRequest;
 import edu.icet.service.ProductService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
@@ -15,8 +15,8 @@ public class ProductController {
 
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
-    public void createProduct(@RequestBody ProductDTO productDTO){
-        productService.createProduct(productDTO);
+    public void createProduct(@RequestBody ProductRequest productRequest){
+        productService.createProduct(productRequest);
     }
 
 }
