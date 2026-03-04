@@ -1,4 +1,4 @@
-package edu.icet.model.dto;
+package edu.icet.model.entity;
 
 
 import lombok.*;
